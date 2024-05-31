@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("@/theme/font.css");
+@import url("@/theme/variables.css");
+@import url("@/theme/spacing.css");
+
+html {
+  scroll-behavior: smooth;
+}

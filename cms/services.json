@@ -1,0 +1,68 @@
+{
+  "title": "Recent Projects.",
+  "text": "Mach dir ein Bild von uns! Schaue dir die Projekte an, die wir in der Vergangenheit gemacht haben",
+  "button": {
+    "text": "Get in Touch.",
+    "link" : "https://www.instagram.com/deep.horizons"
+  },
+  "icons": [
+    { "key": "instagram", "link": "https://www.instagram.com/deep.horizons" },
+    { "key": "youtube", "link": "https://www.youtube.com/@deephorizons8827" }
+  ],
+  "projects": [
+    {
+      "id": 0,
+      "name": "0",
+      "beschreibung": "Ansprechende Website für eine Kunstausstellung mit Künstlerinformationen und Ticketbuchungen.Ansprechende Website für eine Kunstausstellung mit Künstlerinformationen und Ticketbuchungen.Ansprechende Website für eine Kunstausstellung mit Künstlerinformationen und Ticketbuchungen.",
+      "bild": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 1,
+      "name": "1",
+      "beschreibung": "Moderne Website für ein Technologie-Start-up mit interaktiven Elementen.",
+      "bild": "https://images.pexels.com/photos/13618531/pexels-photo-13618531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 2,
+      "name": "2",
+      "beschreibung": "Maßgeschneiderte E-Commerce-Plattform für Sportartikelhersteller.",
+      "bild": "https://images.pexels.com/photos/11875380/pexels-photo-11875380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 3,
+      "name": "Nonprofit Kampagnenwebsite",
+      "beschreibung": "Engagierte Website für eine gemeinnützige Organisation zur Bewusstseinsbildung.",
+      "bild": "https://images.pexels.com/photos/699459/pexels-photo-699459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 4,
+      "name": "Lifestyle Magazin",
+      "beschreibung": "Ansprechendes Online-Magazin mit Fokus auf Lifestyle und Kultur.",
+      "bild": "https://images.pexels.com/photos/762527/pexels-photo-762527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 5,
+      "name": "Immobilien Kundenportal",
+      "beschreibung": "Benutzerfreundliches Portal für eine Immobilienverwaltungsfirma.",
+      "bild": "https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 6,
+      "name": "Tourismus Landkarte",
+      "beschreibung": "Interaktive Landkarte für einen Tourismusverband mit Sehenswürdigkeiten und Unterkünften.",
+      "bild": "https://images.pexels.com/photos/40185/mac-freelancer-macintosh-macbook-40185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 7,
+      "name": "Finanzberatungsblog",
+      "beschreibung": "Professioneller Blog mit Finanztipps und Wirtschaftsnachrichten.",
+      "bild": "https://images.pexels.com/photos/163097/twitter-social-media-communication-internet-network-163097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 8,
+      "name": "Illustrator Portfolio",
+      "beschreibung": "Beeindruckendes Online-Portfolio für einen freiberuflichen Illustrator.",
+      "bild": "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
+}

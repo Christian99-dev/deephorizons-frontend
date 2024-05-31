@@ -1,0 +1,21 @@
+{
+  "title": "Unsere Kunden & Partner.",
+  "subtitle": "Kunden deren vertauen wir schon gewonnen haben, bekommen wir auch deins? :)",
+  "clients": [
+    {
+      "img": "/logos/GJD_books_black.png"
+    },
+    {
+      "img": "/logos/Logo.jpg"
+    },
+    {
+      "img": "/logos/logo.png"
+    },
+    {
+      "img": "/logos/Pferdecoaching_Institut_V01.png"
+    },
+    {
+      "img": "/logos/Siegnum logo ausgeschnitten.png"
+    }
+  ]
+}
