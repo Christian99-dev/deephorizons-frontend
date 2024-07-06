@@ -32,6 +32,7 @@ export type Legal = {
 export type Hero = {
   title: string;
   liste: string[];
+  video: string;
 };
 
 export type Footer = {

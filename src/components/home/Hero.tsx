@@ -4,12 +4,12 @@ import Icon from "@/components/shared/Icon";
 import { fetchHero } from "@/services/api/endpointsMock";
 
 export default async function Hero() {
-  const { title, liste } = await fetchHero();
+  const { title, liste, video } = await fetchHero();
 
   return (
     <section className="relative w-full h-screen xl:h-[700px] md:h-[600px]">
       {/** Background */}
-      <Video src="./videos/hero_video.mp4" speed={3} autoPlay={true} />
+      <Video src={video} speed={3} autoPlay={true} />
 
       {/** Box */}
       <div
