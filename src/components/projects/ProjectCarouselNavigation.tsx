@@ -2,8 +2,6 @@ import React from "react";
 import { Project } from "@/types/apiResponse";
 import getNextId from "@/lib/getNextId";
 import Dots from "@/components/projects/Dots";
-import Footer from "@/components/layout/Footer";
-import Icon from "@/components/shared/Icon";
 import NameAndDescription from "./NameAndDescription";
 
 export default function ({
@@ -15,7 +13,7 @@ export default function ({
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const { name, beschreibung } = allProjects[activeIndex];
+  const { name, beschreibung, link } = allProjects[activeIndex];
   const maxLength = allProjects.length;
 
   return (
@@ -35,6 +33,7 @@ export default function ({
         justify-center`}
       >
         <NameAndDescription name={name} beschreibung={beschreibung} />
+        {link && <a className="font-bold pt-[--spacing-2]" href={link}>{link.replace('https://','')}</a>}
       </div>
 
       <Dots

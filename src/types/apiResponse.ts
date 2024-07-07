@@ -57,4 +57,6 @@ export type Project = {
   name: string;
   beschreibung: string;
   bild: string;
+  video?: string;
+  link?: string;
 };
