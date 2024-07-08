@@ -1,0 +1,129 @@
+.policy h1, 
+.policy h2, 
+.policy h3, 
+.policy h4, 
+.policy h5, 
+.policy h6, 
+.policy p {
+    margin: 0;
+    padding: 0.5em 1em; /* Anpassbares Padding */
+}
+.policy a {
+
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+  
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  
+  }
+
+.policy h1 {
+    font-size: 2em;
+    font-weight: 700; /* Dicke der Schrift */
+}
+
+.policy h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+.policy h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.policy h4 {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.policy h5 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.policy h6 {
+    font-size: 0.875em;
+    font-weight: 500;
+}
+
+.policy p {
+    font-size: 1em; /* Grundgröße der Schrift */
+    font-weight: 400;
+    line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1200px) {
+    .policy h1 {
+        font-size: 1.75em;
+    }
+    .policy h2 {
+        font-size: 1.5em;
+    }
+    .policy h3 {
+        font-size: 1.25em;
+    }
+    .policy h4 {
+        font-size: 1.125em;
+    }
+    .policy h5 {
+        font-size: 0.875em;
+    }
+    .policy h6 {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 768px) {
+    .policy h1 {
+        font-size: 1.5em;
+    }
+    .policy h2 {
+        font-size: 1.25em;
+    }
+    .policy h3 {
+        font-size: 1.125em;
+    }
+    .policy h4 {
+        font-size: 1em;
+    }
+    .policy h5 {
+        font-size: 0.875em;
+    }
+    .policy h6 {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 480px) {
+    .policy h1 {
+        font-size: 1.25em;
+    }
+    .policy h2 {
+        font-size: 1.125em;
+    }
+    .policy h3 {
+        font-size: 1em;
+    }
+    .policy h4 {
+        font-size: 0.875em;
+    }
+    .policy h5 {
+        font-size: 0.75em;
+    }
+    .policy h6 {
+        font-size: 0.75em;
+    }
+}
