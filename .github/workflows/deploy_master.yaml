@@ -36,25 +36,34 @@ jobs:
       run: npm run build  
 
     - name: 📤 Deploy Next.js App to Server
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-          # Create directory if it doesn't exist
-          mkdir -p /nextprod
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+                   
 
-          # Change to the directory
-          cd /nextprod 
+    # - name: 📤 Deploy Next.js App to Server
+    #   env:
+    #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    #   run: |
+    #     ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+    #       # Create directory if it doesn't exist
+    #       mkdir -p /nextprod
 
-          # Pull the latest changes
-          git pull origin master
+    #       # Change to the directory
+    #       cd /nextprod 
 
-          # Install dependencies
-          npm install
+    #       # Pull the latest changes
+    #       git pull origin master
 
-          # Build the application
-          npm run build
+    #       # Install dependencies
+    #       npm install
 
-          # Restart the application (assuming PM2 is used)
-          pm2 restart nextjs-app
-        EOF
+    #       # Build the application
+    #       npm run build
+
+    #       # Restart the application (assuming PM2 is used)
+    #       pm2 restart nextjs-app
+    #     EOF
