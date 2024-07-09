@@ -3,19 +3,24 @@
   "subtitle": "Kunden deren vertauen wir schon gewonnen haben, bekommen wir auch deins? :)",
   "clients": [
     {
-      "img": "/logos/GJD_books_black.png"
+      "img": "/logos/GJD_books_black.png",
+      "name": "GJD Books"
     },
     {
-      "img": "/logos/Logo.jpg"
+      "img": "/logos/Logo.jpg",
+      "name": "Prof. Dr. Kathrin Schütz"
     },
     {
-      "img": "/logos/logo.png"
+      "img": "/logos/logo.png",
+      "name": "Lotus-Entwässerungstechnick"
     },
     {
-      "img": "/logos/Pferdecoaching_Institut_V01.png"
+      "img": "/logos/Pferdecoaching_Institut_V01.png",
+      "name": "Prof. Dr. Kathrin Schütz"
     },
     {
-      "img": "/logos/Siegnum logo ausgeschnitten.png"
+      "img": "/logos/Siegnum logo ausgeschnitten.png",
+      "name": "Siegnum"
     }
   ]
 }

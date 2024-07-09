@@ -22,7 +22,7 @@ export type Networking = {
 export type Clients = {
   title: string;
   subtitle: string;
-  clients: { img: string }[];
+  clients: { img: string, name: string }[];
 };
 
 export type Legal = {
