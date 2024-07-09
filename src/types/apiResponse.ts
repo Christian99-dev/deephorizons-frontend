@@ -1,5 +1,7 @@
 import { type IconKey } from "@/components/shared/Icon";
+import { PageKey } from "./metadata";
 
+/* responses */
 export type Services = {
   title: string;
   text: string;
@@ -40,7 +42,19 @@ export type Footer = {
   text: string;
 };
 
-// Simple
+export type Seo = {
+  title: string;
+  url: string;
+  pages: {
+    [key in PageKey]: SeoPage;
+  };
+};
+
+/* abstract */
+export type SeoPage = {
+  title: string;
+  desc: string;
+};
 
 export type ButtonType = {
   text: string;

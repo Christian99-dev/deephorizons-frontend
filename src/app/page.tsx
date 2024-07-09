@@ -4,6 +4,9 @@ import Hero from "@/components/home/Hero";
 import Networking from "@/components/home/Networking";
 import Services from "@/components/home/Service";
 import Clients from "@/components/home/Clients";
+import { getMetadata } from "@/lib/getMetadata";
+
+export const metadata = getMetadata("homepage")
 
 export default function Home() {
   return (

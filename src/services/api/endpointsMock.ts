@@ -3,8 +3,9 @@ import {
   type Services,
   type Clients,
   type Legal,
-  Hero,
-  Footer,
+  type Hero,
+  type Footer,
+  type Seo,
 } from "@/types/apiResponse";
 import fsPromises from "fs/promises";
 import path from "path";
@@ -35,3 +36,4 @@ export const fetchImpressum   = async (): Promise<Legal>      => fetchLocal("imp
 export const fetchAgb         = async (): Promise<Legal>      => fetchLocal("agb.json");
 export const fetchDatenschutz = async (): Promise<Legal>      => fetchLocal("datenschutz.json");
 export const fetchFooter      = async (): Promise<Footer>     => fetchLocal("footer.json");
+export const fetchSeo         = async (): Promise<Seo>        => fetchLocal("seo.json");

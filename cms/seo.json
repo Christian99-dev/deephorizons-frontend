@@ -1,0 +1,22 @@
+{
+    "title": "DeepHorizons",
+    "url":"https://deephorizons.de",
+    "pages": {
+        "homepage" : {
+            "title" : "Creative Netzwerk für Medienprojekte",
+            "desc"  : "DeepHorizons - Ihr kreatives Netzwerk für Film, Schnitt, Webseiten, Apps und Design. Entdecken Sie unsere vielfältigen Dienstleistungen."
+        },
+        "impressum" : {
+            "title" : "Impressum",
+            "desc"  : "Impressum von DeepHorizons: Alle wichtigen rechtlichen Informationen und Kontaktangaben zu unserem kreativen Netzwerk."
+        },
+        "datenschutz" : {
+            "title" : "Datenschutz",
+            "desc"  : "Datenschutz bei DeepHorizons: Erfahren Sie, wie wir Ihre Daten schützen und welche Maßnahmen wir zum Schutz Ihrer Privatsphäre ergreifen."
+        },
+        "projects" : {
+            "title" : "Projekte",
+            "desc"  : "Entdecken Sie die vielfältigen Projekte von DeepHorizons: Von Film und Schnitt bis hin zu Webseiten, Apps und Design - lassen Sie sich von unserer Kreativität inspirieren."
+        }
+    }
+}

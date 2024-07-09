@@ -1,6 +1,9 @@
 import Footer from "@/components/layout/Footer";
 import ProjectCarousel from "@/components/projects/ProjectCarousel";
+import { getMetadata } from "@/lib/getMetadata";
 import { fetchServices } from "@/services/api/endpointsMock";
+
+export const metadata = getMetadata("projects")
 
 export default async function Projects({ params }: { params: { id: number } }) {
   const { projects } = await fetchServices();
