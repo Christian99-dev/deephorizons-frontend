@@ -127,4 +127,6 @@ const Video = React.forwardRef<
   );
 });
 
+Video.displayName = 'Video';
+
 export default ProjectCarousel;

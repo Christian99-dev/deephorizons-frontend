@@ -1,4 +1,4 @@
-export default function (
+export default function getNextId (
   range: number,
   currentIndex: number,
   step: number

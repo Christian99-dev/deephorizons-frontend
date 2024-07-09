@@ -4,7 +4,7 @@ import getNextId from "@/lib/getNextId";
 import Dots from "@/components/projects/Dots";
 import NameAndDescription from "./NameAndDescription";
 
-export default function ({
+export default function ProjectCarouselNavigation({
   allProjects,
   activeIndex,
   setActiveIndex,
