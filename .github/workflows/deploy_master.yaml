@@ -1,0 +1,60 @@
+name: 🚀 Build and Deploy Next.js App - Production #staging
+
+on:
+  push:
+    branches:
+      - master 
+
+  repository_dispatch:
+    types:
+      - strapi-master
+
+concurrency:
+  group: environment-master 
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: 📦 Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        ref: master 
+
+    - name: 📌 Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: ⚙️ Install Dependencies
+      run: npm install
+
+    - name: 🏗️ Build Next.js App for Production
+      run: npm run build  
+
+    - name: 📤 Deploy Next.js App to Server
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          # Create directory if it doesn't exist
+          mkdir -p /nextprod
+
+          # Change to the directory
+          cd /nextprod 
+
+          # Pull the latest changes
+          git pull origin master
+
+          # Install dependencies
+          npm install
+
+          # Build the application
+          npm run build
+
+          # Restart the application (assuming PM2 is used)
+          pm2 restart nextjs-app
+        EOF
