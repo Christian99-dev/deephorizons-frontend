@@ -25,11 +25,11 @@ jobs:
       with:
         node-version: 20
 
-    - name: ⚙️ Install Dependencies
-      run: npm install
+    # - name: ⚙️ Install Dependencies
+    #   run: npm install
 
-    - name: 🏗️ Build Next.js App for Production
-      run: npm run build  
+    # - name: 🏗️ Build Next.js App for Production
+    #   run: npm run build  
 
     - name: 📤 Deploy Next.js App to Server
       uses: appleboy/ssh-action@master
@@ -37,7 +37,7 @@ jobs:
         host:     ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key:      ${{ secrets.SSH_PRIVATE_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        # passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
                    
 
