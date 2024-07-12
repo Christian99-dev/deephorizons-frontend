@@ -3,7 +3,7 @@ name: Deploy Next.js App
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -47,4 +47,4 @@ jobs:
           CPANEL_DOMAIN:    ${{ secrets.HOST }}
           CPANEL_APP_PATH: '/nextprod'
         run: |
-          curl -u $CPANEL_USERNAME:$CPANEL_PASSWORD "https://$CPANEL_DOMAIN:2083/execute/Nodejs/restart_application?domain=your-domain.com&path=$CPANEL_APP_PATH"
+          curl -u $CPANEL_USERNAME:$CPANEL_PASSWORD "https://$CPANEL_DOMAIN:2083/execute/Nodejs/restart_application?domain=$CPANEL_DOMAIN&path=$CPANEL_APP_PATH"
