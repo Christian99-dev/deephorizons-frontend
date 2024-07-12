@@ -1,66 +1,50 @@
-name: 🚀 Build and Deploy Next.js App - Production #staging
+name: Deploy Next.js App
 
 on:
   push:
     branches:
-      - master 
-
-concurrency:
-  group: environment-master
-  cancel-in-progress: true
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: 📦 Checkout Repository
-      uses: actions/checkout@v3
-      with:
-        ref: master 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
 
-    - name: 📌 Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
+      - name: Install dependencies
+        run: npm install
 
-    - name: ⚙️ Install Dependencies
-      run: npm install
+      - name: Build Next.js app
+        run: npm run build
 
-    - name: 🏗️ Build Next.js App for Production
-      run: npm run build  
+      - name: Deploy via FTP
+        env:
+          FTP_HOST:     ${{ secrets.HOST }}
+          FTP_USERNAME: ${{ secrets.USER }}
+          FTP_PASSWORD: ${{ secrets.PASSWORD }}
+          LOCAL_DIR: '.'
+          REMOTE_DIR: '/nextprod'
+        run: |
+          sudo apt-get install lftp
+          lftp -f "
+          open $FTP_HOST
+          user $FTP_USERNAME $FTP_PASSWORD
+          mirror -R $LOCAL_DIR $REMOTE_DIR
+          bye
+          "
 
-    - name: 📤 Deploy Next.js App to Server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.SSH_PASSWORD }} 
-        port: ${{ secrets.SSH_PORT }} 
-        script: |
-                   
-
-    - name: 📤 Deploy Next.js App to Server
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        ssh -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-          # Create directory if it doesn't exist
-          mkdir -p /nextprod
-
-          # Change to the directory
-          cd /nextprod 
-
-          # Pull the latest changes
-          git pull origin master
-
-          # Install dependencies
-          npm install
-
-          # Build the application
-          npm run build
-
-          # Restart the application (assuming PM2 is used)
-          pm2 restart nextjs-app
-        EOF
+      - name: Restart Node.js server on cPanel
+        env:
+          CPANEL_USERNAME:  ${{ secrets.USER }}
+          CPANEL_PASSWORD:  ${{ secrets.PASSWORD }}
+          CPANEL_DOMAIN:    ${{ secrets.HOST }}
+          CPANEL_APP_PATH: '/nextprod'
+        run: |
+          curl -u $CPANEL_USERNAME:$CPANEL_PASSWORD "https://$CPANEL_DOMAIN:2083/execute/Nodejs/restart_application?domain=your-domain.com&path=$CPANEL_APP_PATH"
