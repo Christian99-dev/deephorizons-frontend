@@ -1,6 +1,6 @@
 import { fetchClients } from "@/services/api/endpointsMock";
 import Marquee from "react-fast-marquee";
-import Image from "next/image";
+import DynamicImage from "../shared/DynamicImage";
 
 export default async function Clients() {
   const { title, clients } = await fetchClients();
@@ -13,12 +13,13 @@ export default async function Clients() {
       <Marquee speed={150} gradient gradientWidth={50}>
         {clients.map((client, key) => (
           <div key={key} className="w-52 ml-52 xl:ml-24 xl:w-40">
-            <Image
+            <DynamicImage
+              type="SSG"
               className="m-auto"
               alt={client.name}
               src={client.img}
-              height="1000"
-              width="1000"
+              height={1000}
+              width={1000}
             />
           </div>
         ))}

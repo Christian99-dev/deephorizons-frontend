@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DynamicImage from "./DynamicImage";
 
 const Icon = ({
   name,
@@ -12,7 +13,8 @@ const Icon = ({
   onClick?: () => any;
 }) => {
   const imageElement = (
-    <Image
+    <DynamicImage
+      type="SSG"
       onClick={onClick}
       className={`${className} icon-size transition-all hover:scale-125 cursor-pointer`}
       src={`/icons/${name}.svg`}

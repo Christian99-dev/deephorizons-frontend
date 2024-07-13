@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Project } from "@/types/apiResponse";
 import ProjectSlide from "@/components/slides/ProjectSlide";
 import ProjectCarouselNavigation from "@/components/projects/ProjectCarouselNavigation";
+import DynamicImage from "../shared/DynamicImage";
 
 const ProjectCarousel = ({
   allProjects,
@@ -53,7 +54,8 @@ const ProjectCarousel = ({
             }
 
             return (
-              <Image
+              <DynamicImage
+                type="SSG"
                 key={bild}
                 className="absolute w-full h-full object-contain"
                 src={bild}

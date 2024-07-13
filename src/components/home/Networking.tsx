@@ -1,8 +1,8 @@
 import { fetchNetworking } from "@/services/api/endpointsMock";
-import Image from "next/image";
 import Icon from "@/components/shared/Icon";
 import Button from "@/components/shared/Button";
 import Parallax from "@/components/shared/Parallax";
+import DynamicImage from "../shared/DynamicImage";
 
 export default async function Networking() {
   const {
@@ -37,7 +37,8 @@ export default async function Networking() {
           strength={400}
           className="w-[50%] xl:absolute xl:top-0 xl:bottom-0 xl:right-0 xl:left-0 xl:w-[100%]"
         >
-          <Image
+          <DynamicImage
+            type="SSG"
             className="h-full w-full object-cover"
             src={img}
             alt="img"

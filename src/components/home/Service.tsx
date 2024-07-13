@@ -6,6 +6,7 @@ import Parallax from "@/components/shared/Parallax";
 import { ButtonType, type IconType, type Project } from "@/types/apiResponse";
 import Link from "next/link";
 import Icon from "../shared/Icon";
+import DynamicImage from "../shared/DynamicImage";
 
 export default async function ServicesPreview() {
   const { title, text, projects, icons, button } = await fetchServices();
@@ -42,7 +43,11 @@ const LeftBox = ({
       <p className="font-light mb-auto fs-10 lg:text-center">{text}</p>
 
       {/**Button */}
-      <Button text={buttonText} link={buttonLink} className="mb-[--spacing-8] lg:mb-0" />
+      <Button
+        text={buttonText}
+        link={buttonLink}
+        className="mb-[--spacing-8] lg:mb-0"
+      />
 
       {/**Icons */}
       <div className="flex gap-[--spacing-4]">
@@ -94,13 +99,14 @@ const ProjectCard = ({
       className="aspect-square w-96 lg:w-60"
       fromBottom={fromBottom}
     >
-      <Image
+      <DynamicImage
+        type="SSG"
         alt="beschreibung"
         src={bild}
-        width="1000"
-        height="1000"
+        width={1000}
+        height={1000}
         className="object-cover"
-      ></Image>
+      />
       <Link
         href={`projects/${index}`}
         className="absolute top-0 left-0 right-0 bottom-0 p-5 z-21 flex bg-black text-white justify-center items-center font-semibold fs-9 bg-opacity-30 cursor-pointer transition-all duration-300 opacity-0 hover:opacity-100 text-center"
