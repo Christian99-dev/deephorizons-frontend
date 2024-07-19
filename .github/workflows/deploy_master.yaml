@@ -24,27 +24,15 @@ jobs:
       - name: Build Next.js app
         run: npm run build
 
-      - name: Deploy via FTP
-        env:
-          FTP_HOST:     ${{ secrets.HOST }}
-          FTP_USERNAME: ${{ secrets.USER }}
-          FTP_PASSWORD: ${{ secrets.PASSWORD }}
-          LOCAL_DIR: '.'
-          REMOTE_DIR: '/nextprod'
-        run: |
-          sudo apt-get install lftp
-          lftp -f "
-          open $FTP_HOST
-          user $FTP_USERNAME $FTP_PASSWORD
-          mirror -R $LOCAL_DIR $REMOTE_DIR
-          bye
-          "
-
-      - name: Restart Node.js server on cPanel
-        env:
-          CPANEL_USERNAME:  ${{ secrets.USER }}
-          CPANEL_PASSWORD:  ${{ secrets.PASSWORD }}
-          CPANEL_DOMAIN:    ${{ secrets.HOST }}
-          CPANEL_APP_PATH: '/nextprod'
-        run: |
-          curl -u $CPANEL_USERNAME:$CPANEL_PASSWORD "https://$CPANEL_DOMAIN:2083/execute/Nodejs/restart_application?domain=$CPANEL_DOMAIN&path=$CPANEL_APP_PATH"
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          protocol: ftps
+          local-dir: "out/"
+          server-dir: "public_html/"
+          exclude:
+            -  videos/*.mp4
