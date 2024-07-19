@@ -5,6 +5,7 @@ import { Project } from "@/types/apiResponse";
 import ProjectSlide from "@/components/slides/ProjectSlide";
 import ProjectCarouselNavigation from "@/components/projects/ProjectCarouselNavigation";
 import DynamicImage from "../shared/DynamicImage";
+import Icon from "../shared/Icon";
 
 const ProjectCarousel = ({
   allProjects,
@@ -42,7 +43,7 @@ const ProjectCarousel = ({
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           items={allProjects.map(({ thumbnail, name, video, bild }, index) => {
-            if (video) 
+            if (video)
               return (
                 <Video
                   key={video}
@@ -51,8 +52,8 @@ const ProjectCarousel = ({
                   ref={(el) => (videoRefs.current[index] = el)}
                 />
               );
-            
-            if (bild) 
+
+            if (bild)
               return (
                 <DynamicImage
                   type="SSG"
@@ -115,20 +116,38 @@ const Video = React.forwardRef<
         onPause={() => setIsPlaying(false)}
         onMouseDown={(e) => e.preventDefault()}
         onTouchStart={(e) => e.preventDefault()}
+        onClick={handlePlayPause}
       >
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div
-        className="absolute top-4 left-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded cursor-pointer"
-        onClick={handlePlayPause}
-      >
+      <PauseOverlay onClick={handlePlayPause} open={!isPlaying} />
+      <div onClick={handlePlayPause} className="absolute top-4 left-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded cursor-pointer">
         {isPlaying ? "Pause" : "Play"}
       </div>
     </div>
   );
 });
 
-Video.displayName = 'Video';
+const PauseOverlay = ({
+  onClick,
+  open,
+}: {
+  onClick: () => void;
+  open: boolean;
+}) => {
+  return (
+    open && (
+      <div
+        onClick={onClick}
+        className="absolute w-full h-full bg-slate-600 bg-opacity-30 z-10 flex items-center justify-center"
+      >
+        <Icon name="play"/>
+      </div>
+    )
+  );
+};
+
+Video.displayName = "Video";
 
 export default ProjectCarousel;

@@ -92,20 +92,24 @@ const ProjectCard = ({
   fromBottom: boolean;
   index: number;
 }) => {
-  const { thumbnail, name } = project;
+  const { thumbnail, name, video } = project;
+  const isVideo = video != null || video != undefined;
   return (
     <Parallax
       strength={50}
       className="aspect-square w-96 lg:w-60"
       fromBottom={fromBottom}
     >
+      {isVideo && <div className="absolute w-full h-full flex justify-center items-center bg-slate-600 bg-opacity-30">
+        <Icon name="play-black" />
+      </div>}
       <DynamicImage
         type="SSG"
         alt="beschreibung"
         src={thumbnail}
         width={1000}
         height={1000}
-        className="object-cover"
+        className="object-cover h-full"
       />
       <Link
         href={`projects/${index}`}

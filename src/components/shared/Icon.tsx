@@ -40,6 +40,8 @@ export type IconKey =
   | "fiverr"
   | "linkedin"
   | "down"
+  | "play"
+  | "play-black"
   | "white-left"
   | "white-right"
   | "white-down"
