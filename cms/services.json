@@ -15,19 +15,21 @@
       "name": "Lotus Rohrreinigung - Homepage",
       "beschreibung": "Für das Unternehmen Lotus-Rohrreinigung haben wir eine einfache Homepage erstellt. Die Website bietet eine klare Übersicht über die angebotenen Dienstleistungen und ermöglicht es Kunden, schnell und einfach Kontakt aufzunehmen.",
       "bild": "/images/lotus.png",
+      "thumbnail": "/images/lotus_thumbail.png",
       "link":"https://lotus-rohrreinigung.de"
     },
     {
       "id": 1,
       "name": "DeepHorizons Showreel",
       "beschreibung": "Hey, schaut euch unser Showreel an und viel Spaß beim Schauen!",
-      "bild": "/images/trailer_thumbnail.png",
+      "thumbnail": "/images/thumbnail_trailer.png",
       "video": "/videos/showreel.mp4"
     },
     {
       "id": 2,
-      "name": "Software für Onlineshop",
-      "beschreibung": "Eine maßgeschneiderte Software wurde entwickelt, um einen Spielwarenhandel zu unterstützen. Mit dieser Software ist es möglich, den Internationalen Markt zu analysieren und Trends zu erkennen.",
+      "name": "Marktanalyse-Software für Onlineshop",
+      "beschreibung": "Eine maßgeschneiderte Software wurde entwickelt, um einen Spielwarenhandel zu unterstützen. Mit dieser Software können der Amazon-Markt detailliert analysiert und Trends erkannt werden, unter Nutzung der Amazon API.",
+      "thumbnail": "/images/dietz_thumbnail.png",
       "bild": "/images/dietz.png"
     },
     {
@@ -35,6 +37,7 @@
       "name": "EinGuterTipp - SaaS Anwendung",
       "beschreibung": "Wir haben als Aushilfsentwickler an der SaaS-Anwendung für EinGuterTipp mitgewirkt, die sich auf Empfehlungsmarketing spezialisiert. Die Software ermöglicht es Unternehmen, gezieltes Empfehlungsmarketing zu betreiben und ihre Kundenbindung zu stärken.",
       "bild": "/images/egt.png",
+      "thumbnail": "/images/egt_thumbnail.png",
       "link":"https://www.eingutertipp.de"
 
     }

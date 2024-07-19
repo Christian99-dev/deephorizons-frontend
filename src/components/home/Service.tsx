@@ -92,7 +92,7 @@ const ProjectCard = ({
   fromBottom: boolean;
   index: number;
 }) => {
-  const { bild, name } = project;
+  const { thumbnail, name } = project;
   return (
     <Parallax
       strength={150}
@@ -102,7 +102,7 @@ const ProjectCard = ({
       <DynamicImage
         type="SSG"
         alt="beschreibung"
-        src={bild}
+        src={thumbnail}
         width={1000}
         height={1000}
         className="object-cover"

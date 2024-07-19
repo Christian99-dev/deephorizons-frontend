@@ -41,29 +41,29 @@ const ProjectCarousel = ({
         <ProjectSlide
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
-          items={allProjects.map(({ bild, name, video }, index) => {
-            if (video) {
+          items={allProjects.map(({ thumbnail, name, video, bild }, index) => {
+            if (video) 
               return (
                 <Video
                   key={video}
                   src={video}
-                  poster={bild}
+                  poster={thumbnail}
                   ref={(el) => (videoRefs.current[index] = el)}
                 />
               );
-            }
-
-            return (
-              <DynamicImage
-                type="SSG"
-                key={bild}
-                className="absolute w-full h-full object-contain"
-                src={bild}
-                alt={`Bild zu(r) ${name}`}
-                width={3000}
-                height={3000}
-              />
-            );
+            
+            if (bild) 
+              return (
+                <DynamicImage
+                  type="SSG"
+                  key={bild}
+                  className="absolute w-full h-full object-contain"
+                  src={bild}
+                  alt={`Bild zu(r) ${name}`}
+                  width={3000}
+                  height={3000}
+                />
+              );
           })}
         />
 

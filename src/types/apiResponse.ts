@@ -70,7 +70,8 @@ export type Project = {
   id: number;
   name: string;
   beschreibung: string;
-  bild: string;
+  thumbnail: string;
+  bild?: string;
   video?: string;
   link?: string;
 };
