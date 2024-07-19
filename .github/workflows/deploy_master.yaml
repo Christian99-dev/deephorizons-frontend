@@ -34,5 +34,4 @@ jobs:
           protocol: ftps
           local-dir: "out/"
           server-dir: "public_html/"
-          exclude:
-            -  videos/*.mp4
+          exclude: videos/
