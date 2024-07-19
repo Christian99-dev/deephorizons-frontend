@@ -1,7 +1,11 @@
 {
   "title": "Unsere Kunden & Partner",
   "subtitle": "Kunden deren vertauen wir schon gewonnen haben, bekommen wir auch deins? :)",
-  "clients": [
+  "clients": [    
+    {
+      "img": "/logos/eingutertipp.jpg",
+      "name": "EinGuterTipp"
+    },
     {
       "img": "/logos/GJD_books_black.png",
       "name": "GJD Books"
