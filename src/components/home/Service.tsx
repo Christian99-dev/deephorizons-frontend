@@ -95,7 +95,7 @@ const ProjectCard = ({
   const { thumbnail, name } = project;
   return (
     <Parallax
-      strength={150}
+      strength={50}
       className="aspect-square w-96 lg:w-60"
       fromBottom={fromBottom}
     >
