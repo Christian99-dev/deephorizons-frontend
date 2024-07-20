@@ -77,9 +77,9 @@ const Carousel = ({ projects }: { projects: Project[] }) => (
     />
 
     {/**Mini text */}
-    <p className="absolute top-[-6px] left-[-5px] fs-10 font-bold animate-fadeInLeft">
+    {/* <p className="absolute top-[-6px] left-[-5px] fs-10 font-bold animate-fadeInLeft">
       Deep Horizons
-    </p>
+    </p> */}
   </div>
 );
 
